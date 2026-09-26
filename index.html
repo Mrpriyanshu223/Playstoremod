@@ -2,262 +2,238 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080b13">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Premium Access</title>
 
 <style>
-:root{
-  --bg:#080b13;
-  --card:rgba(22,27,43,.72);
-  --line:rgba(255,255,255,.12);
-  --text:#f7f8ff;
-  --muted:#9ca6bc;
-  --a:#7657ff;
-  --ok:#38df8a;
-  --bad:#ff5d7b
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-*{box-sizing:border-box}
-
 body{
-  margin:0;
-  padding:14px 10px 30px;
-  background:
-    radial-gradient(circle at 0 0,#34226b 0,transparent 34%),
-    radial-gradient(circle at 100% 15%,#063d50 0,transparent 28%),
-    var(--bg);
-  color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial
+min-height:100vh;
+background:
+radial-gradient(circle at top left,#273451,transparent 35%),
+radial-gradient(circle at bottom right,#351c47,transparent 35%),
+#080a10;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
 .app{
-  max-width:680px;
-  margin:auto
+width:100%;
+max-width:430px;
 }
 
-.nav{
-  height:52px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between
+.card{
+background:rgba(20,23,34,.82);
+border:1px solid rgba(255,255,255,.10);
+border-radius:28px;
+padding:22px;
+box-shadow:0 25px 70px rgba(0,0,0,.5);
+backdrop-filter:blur(20px);
 }
 
-.brand{
-  font-weight:850
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.glass{
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.09),
-    rgba(255,255,255,.035)
-  );
-  border:1px solid var(--line);
-  border-radius:24px;
-  box-shadow:0 24px 70px #0008;
-  backdrop-filter:blur(20px)
+.logo,
+.admin{
+width:43px;
+height:43px;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:800;
 }
 
-.screen{display:none}
-
-.screen.active{
-  display:block;
-  animation:f .2s ease
-}
-
-@keyframes f{
-  from{opacity:0;transform:translateY(5px)}
-  to{opacity:1;transform:none}
-}
-
-.hero,.panel{
-  padding:22px 18px
-}
-
-.eyebrow,.tag{
-  display:inline-block;
-  font-size:11px;
-  font-weight:800;
-  padding:6px 9px;
-  border-radius:99px;
-  background:#7657ff20;
-  border:1px solid #7657ff44;
-  color:#d6ceff
-}
-
-.eyebrow{margin-bottom:13px}
-
-h1{
-  font-size:clamp(29px,8vw,44px);
-  line-height:1.03;
-  margin:0 0 10px
-}
-
-h2{margin:0 0 8px}
-
-.desc,p{
-  color:var(--muted);
-  line-height:1.5
-}
-
-.price{
-  font-size:40px;
-  font-weight:900;
-  margin:16px 0
-}
-
-.old{
-  text-decoration:line-through;
-  color:#737c91;
-  font-size:17px;
-  margin-right:9px
-}
-
-.uid{
-  font-size:12px;
-  color:var(--muted);
-  min-height:19px;
-  margin-bottom:12px
-}
-
-.actions{
-  display:grid;
-  gap:10px
-}
-
-.btn{
-  width:100%;
-  border:0;
-  border-radius:15px;
-  min-height:48px;
-  padding:12px 14px;
-  font-weight:800;
-  color:#fff;
-  cursor:pointer
-}
-
-.primary{
-  background:linear-gradient(135deg,#7657ff,#5638ed)
-}
-
-.secondary{
-  background:#ffffff0d;
-  border:1px solid var(--line)
+.logo{
+background:linear-gradient(135deg,#fff,#aeb7c9);
+color:#090b12;
 }
 
 .admin{
-  width:42px;
-  height:42px;
-  border:1px solid var(--line);
-  background:#ffffff0b;
-  color:#fff;
-  border-radius:14px;
-  font-weight:900;
-  cursor:pointer
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+cursor:pointer;
+}
+
+.welcome{
+margin-top:28px;
+color:#9ca7bd;
+font-size:12px;
+letter-spacing:3px;
+}
+
+h1{
+margin-top:7px;
+font-size:31px;
+}
+
+.subtitle{
+margin-top:12px;
+color:#aeb6c7;
+font-size:14px;
+line-height:1.6;
+}
+
+.price-box{
+margin-top:24px;
+padding:18px;
+border-radius:20px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.old-price{
+color:#727b8e;
+text-decoration:line-through;
+font-size:14px;
+}
+
+.price{
+margin-top:4px;
+font-size:35px;
+font-weight:800;
+}
+
+.price-label{
+color:#8e98ab;
+font-size:12px;
+margin-top:3px;
+}
+
+button{
+width:100%;
+border:0;
+border-radius:16px;
+padding:15px;
+margin-top:12px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+}
+
+button:active{
+transform:scale(.98);
+}
+
+.primary{
+background:linear-gradient(135deg,#fff,#cbd2df);
+color:#090b12;
+}
+
+.secondary{
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.10);
+color:#fff;
 }
 
 .back{
-  border:0;
-  background:none;
-  color:#b9c1d5;
-  padding:4px 0 12px;
-  cursor:pointer
+width:auto;
+margin:0 0 20px;
+padding:9px 14px;
 }
 
-.field{margin:0 0 13px}
+.screen{
+display:none;
+}
+
+.screen.active{
+display:block;
+}
+
+.title{
+font-size:25px;
+font-weight:800;
+}
+
+.input-box{
+margin-top:15px;
+}
 
 label{
-  display:block;
-  font-size:12px;
-  font-weight:750;
-  color:var(--muted);
-  margin-bottom:7px
+display:block;
+margin-bottom:7px;
+color:#aeb6c7;
+font-size:12px;
 }
 
-input,select,textarea{
-  width:100%;
-  border:1px solid var(--line);
-  background:#0004;
-  color:#fff;
-  border-radius:13px;
-  padding:12px;
-  outline:none
+input,
+select{
+width:100%;
+padding:13px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.10);
+background:rgba(255,255,255,.055);
+color:#fff;
+outline:none;
 }
 
-textarea{
-  min-height:105px;
-  resize:vertical
+option{
+color:#000;
 }
 
-option{background:#111522}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px
+.info{
+margin-top:15px;
+padding:14px;
+border-radius:15px;
+background:rgba(255,255,255,.05);
+color:#aeb6c7;
+font-size:13px;
+line-height:1.5;
 }
 
-.notice{
-  margin:12px 0;
-  padding:14px;
-  text-align:center;
-  border:1px dashed #ffffff66;
-  border-radius:15px;
-  color:#bac2d5
+.success{
+color:#9ff0bb;
 }
 
-.locked{
-  border-color:#ff5d7b88;
-  color:#ff9bad
+.warning{
+color:#ffd78a;
 }
 
-.unlocked{
-  border-color:#38df8a88;
-  color:#8bf1b7
+.danger{
+color:#ff9c9c;
 }
 
-.request,.box{
-  margin-top:10px;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:#0003
+.admin-box{
+margin-top:15px;
+padding:16px;
+border-radius:18px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
 }
 
-.request-top{
-  display:flex;
-  justify-content:space-between;
-  gap:8px
+.hidden{
+display:none!important;
 }
 
-.request small,.box p{
-  color:var(--muted)
+.premium-link{
+display:block;
+margin-top:10px;
+padding:14px;
+border-radius:15px;
+color:#fff;
+text-decoration:none;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.09);
 }
 
-.tiny{
-  font-size:11px;
-  color:#737d92;
-  line-height:1.5;
-  margin-top:12px
-}
-
-.status{
-  font-size:12px;
-  margin-top:8px
-}
-
-.empty{
-  color:var(--muted);
-  font-size:14px
-}
-
-.success{color:#8bf1b7}
-.error{color:#ff9bad}
-
-@media(max-width:430px){
-  .grid{grid-template-columns:1fr}
-  .hero,.panel{padding:18px 15px}
+.footer{
+margin-top:18px;
+text-align:center;
+color:#626b7c;
+font-size:10px;
 }
 </style>
 </head>
@@ -266,276 +242,336 @@ option{background:#111522}
 
 <div class="app">
 
-<nav class="nav">
-  <div class="brand" id="brand">Premium Access</div>
-  <button class="admin" id="adminBtn">A</button>
-</nav>
-
-
 <!-- HOME -->
-<section id="s1" class="screen active">
+<div id="home" class="screen active">
 
-<article class="glass hero">
+<div class="card">
 
-<span class="eyebrow">PREMIUM ACCESS</span>
+<div class="top">
 
-<h1 id="title">Premium Content</h1>
-
-<p class="desc" id="desc">
-Unlock exclusive premium content.
-</p>
-
-<div class="price">
-<span class="old" id="old">₹899</span>
-₹<span id="final">99</span>
+<div class="logo">
+P
 </div>
 
-<div class="uid" id="uid"></div>
+<div class="admin" onclick="openAdmin()">
+A
+</div>
 
-<div class="actions">
+</div>
 
-<button class="btn primary" id="pay">
+<div class="welcome">
+WELCOME
+</div>
+
+<h1 id="homeTitle">
+PREMIUM ACCESS
+</h1>
+
+<p class="subtitle">
+Get access to premium content with a simple payment verification process.
+</p>
+
+<div class="price-box">
+
+<div class="old-price">
+₹999
+</div>
+
+<div class="price" id="homePrice">
+₹899
+</div>
+
+<div class="price-label">
+One time payment
+</div>
+
+</div>
+
+<button class="primary" onclick="openPayment()">
 Pay Now
 </button>
 
-<button class="btn secondary" id="submit">
+<button class="secondary" onclick="openPayment()">
 Submit Your Payment
 </button>
 
-<button class="btn secondary" id="premium">
+<button class="secondary" onclick="openPremium()">
 Access Premium Content
 </button>
 
+<div id="systemMessage" class="info">
+Connecting to system...
 </div>
 
-<div class="status" id="userStatus"></div>
-
-<div class="tiny">
-Your access is linked to this browser's Firebase user ID.
+<div class="footer">
+Premium Access
 </div>
 
-</article>
-
-</section>
+</div>
+</div>
 
 
 <!-- PAYMENT -->
-<section id="s2" class="screen">
+<div id="payment" class="screen">
 
-<button class="back" data-back="s1">
+<div class="card">
+
+<button class="secondary back" onclick="goHome()">
 ← Back
 </button>
 
-<article class="glass panel">
+<div class="title">
+Payment Verification
+</div>
 
-<h2>Payment Verification</h2>
-
-<p class="desc">
-Submit the details after completing your payment.
+<p class="subtitle">
+Payment karne ke baad apni transaction details submit karo.
 </p>
 
-<form id="form">
+<div class="info">
 
-<div class="field">
-<label>Name</label>
+<strong>
+Amount:
+<span id="paymentAmount">₹899</span>
+</strong>
+
+<br><br>
+
+UPI ID:<br>
+
+<strong id="upiText">
+Loading...
+</strong>
+
+</div>
+
+<button class="primary" onclick="makePayment()">
+Pay <span id="payButtonAmount">₹899</span>
+</button>
+
+<div class="input-box">
+
+<label>
+Your Name
+</label>
+
 <input
 id="name"
-maxlength="80"
-required
+type="text"
 placeholder="Enter your name">
+
 </div>
 
-<div class="field">
-<label>Payment App</label>
+<div class="input-box">
 
-<select id="app" required>
+<label>
+Payment App
+</label>
 
-<option value="">Select app</option>
-<option>PhonePe</option>
-<option>Google Pay</option>
-<option>Paytm</option>
-<option>Navi</option>
-<option>Other</option>
+<select id="app">
+
+<option value="">
+Select payment app
+</option>
+
+<option>
+Google Pay
+</option>
+
+<option>
+PhonePe
+</option>
+
+<option>
+Paytm
+</option>
+
+<option>
+Other
+</option>
 
 </select>
+
 </div>
 
-<div class="field">
-<label>Payment ID / UTR</label>
+<div class="input-box">
+
+<label>
+Transaction / UTR ID
+</label>
 
 <input
-id="paymentId"
-maxlength="100"
-required
-placeholder="Enter payment ID / UTR">
+id="transaction"
+type="text"
+placeholder="Enter transaction ID">
+
 </div>
 
-<div class="field">
-<label>Payment Time</label>
-
-<input
-id="time"
-type="time"
-required>
-</div>
-
-<div class="grid">
-
-<button
-type="submit"
-class="btn primary">
-Submit
+<button class="primary" onclick="submitPayment()">
+Submit Payment
 </button>
 
-<button
-type="button"
-class="btn secondary"
-data-back="s1">
-Cancel
-</button>
+<div id="paymentMessage" class="info">
+
+Payment details submit karne ke baad verification pending rahega.
 
 </div>
 
-</form>
-
-</article>
-</section>
-
-
-<!-- ADMIN -->
-<section id="s3" class="screen">
-
-<button class="back" data-back="s1">
-← Back
-</button>
-
-<article class="glass panel">
-
-<h2>Admin Panel</h2>
-
-<p class="desc">
-Manage your premium settings.
-</p>
-
-<div class="field">
-<label>Title</label>
-<input id="aTitle">
-</div>
-
-<div class="field">
-<label>Description</label>
-<textarea id="aDesc"></textarea>
-</div>
-
-<div class="grid">
-
-<div class="field">
-<label>Crossed Price</label>
-<input id="aOld">
-</div>
-
-<div class="field">
-<label>Final Price</label>
-<input id="aFinal">
-</div>
-
-</div>
-
-<div class="field">
-<label>UPI ID</label>
-<input id="aUpi">
-</div>
-
-<div class="field">
-<label>Merchant Name</label>
-<input id="aMerchant">
-</div>
-
-<h2 style="margin-top:22px">
-Premium Links
-</h2>
-
-<div class="field">
-<label>Link 1 Name</label>
-<input id="l1n">
-</div>
-
-<div class="field">
-<label>Link 1 URL</label>
-<input id="l1u">
-</div>
-
-<div class="field">
-<label>Link 2 Name</label>
-<input id="l2n">
-</div>
-
-<div class="field">
-<label>Link 2 URL</label>
-<input id="l2u">
-</div>
-
-<h2 style="margin-top:22px">
-Link 3 — File Downloader
-</h2>
-
-<div class="field">
-<label>Button Label</label>
-<input id="fn">
-</div>
-
-<div class="field">
-<label>Filename</label>
-<input id="ff">
-</div>
-
-<div class="field">
-<label>File Content</label>
-<textarea id="fc"></textarea>
-</div>
-
-<button
-class="btn primary"
-id="save">
-Save All Changes
-</button>
-
-</article>
-
-
-<article class="glass panel">
-
-<h2>Payment Requests</h2>
-
-<div id="requests">
-<div class="empty">
-Loading...
 </div>
 </div>
-
-</article>
-
-</section>
 
 
 <!-- PREMIUM -->
-<section id="s4" class="screen">
+<div id="premium" class="screen">
 
-<button class="back" data-back="s1">
+<div class="card">
+
+<button class="secondary back" onclick="goHome()">
 ← Back
 </button>
 
-<article class="glass panel">
+<div id="locked">
 
-<h2>Premium Zone</h2>
+<div class="title">
+🔒 Premium Locked
+</div>
 
-<div id="premiumState"></div>
+<p class="subtitle">
+Payment approval ke baad premium content unlock hoga.
+</p>
 
-<div id="premiumContent"></div>
+<button class="primary" onclick="openPayment()">
+Submit Payment
+</button>
 
-</article>
+</div>
 
-</section>
+
+<div id="unlocked" class="hidden">
+
+<div class="title">
+Premium Zone
+</div>
+
+<p class="subtitle">
+Your premium content is available.
+</p>
+
+
+<button
+class="secondary"
+onclick="copyPremiumLink(1)">
+📋 Copy Premium Link 1
+</button>
+
+
+<button
+class="secondary"
+onclick="copyPremiumLink(2)">
+📋 Copy Premium Link 2
+</button>
+
+
+<button
+class="secondary"
+onclick="downloadFile()">
+Download File
+</button>
+
+<div id="copyMessage" class="info hidden">
+Link copied successfully.
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- ADMIN -->
+<div id="adminPanel" class="screen">
+
+<div class="card">
+
+<button class="secondary back" onclick="goHome()">
+← Back
+</button>
+
+<div class="title">
+Admin Panel
+</div>
+
+<p class="subtitle">
+Manage Premium Access settings.
+</p>
+
+
+<div class="admin-box">
+
+<label>
+Product Title
+</label>
+
+<input
+id="adminTitle"
+value="PREMIUM ACCESS">
+
+
+<label style="margin-top:15px">
+Price
+</label>
+
+<input
+id="adminPrice"
+type="number"
+value="899">
+
+
+<label style="margin-top:15px">
+UPI ID
+</label>
+
+<input
+id="adminUpi"
+placeholder="yourupi@upi">
+
+
+<button
+class="primary"
+onclick="saveAdminSettings()">
+Save Changes
+</button>
+
+</div>
+
+
+<div class="admin-box">
+
+<strong>
+Current User Payment
+</strong>
+
+<div
+id="adminPaymentStatus"
+class="info">
+
+Loading...
+
+</div>
+
+</div>
+
+
+<div
+id="adminMessage"
+class="info">
+
+Admin panel ready.
+
+</div>
+
+</div>
+</div>
 
 </div>
 
@@ -544,25 +580,35 @@ Loading...
 
 import {
 initializeApp
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+}
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
 
 import {
 getAuth,
 signInAnonymously,
 onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+}
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
 
 import {
 getFirestore,
 doc,
 getDoc,
-setDoc
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+setDoc,
+onSnapshot,
+serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
-/* ============================================================
-FIREBASE CONFIG
-============================================================ */
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
 
@@ -590,305 +636,102 @@ measurementId:
 };
 
 
-/* ============================================================
-ADMIN PIN
-============================================================ */
-
-const ADMIN_PIN = "852201";
-
-
-/* ============================================================
-DEFAULT SETTINGS
-============================================================ */
-
-const defaults = {
-
-title:"Premium Content",
-
-desc:"Unlock exclusive premium content.",
-
-oldPrice:"899",
-
-finalPrice:"99",
-
-upi:"merchant@upi",
-
-merchant:"Premium Store",
-
-l1n:"Premium Channel",
-
-l1u:"https://t.me/",
-
-l2n:"Premium Website",
-
-l2u:"https://example.com/",
-
-fn:"Download Config",
-
-ff:"config.txt",
-
-fc:"Premium configuration file."
-
-};
-
-
-/* ============================================================
-VARIABLES
-============================================================ */
-
-let db = null;
-let auth = null;
-let user = null;
-let config = {...defaults};
-
-
-/* ============================================================
-HELPER
-============================================================ */
-
-const $ = id => document.getElementById(id);
-
-
-/* ============================================================
-SCREEN
-============================================================ */
-
-function show(id){
-
-document
-.querySelectorAll(".screen")
-.forEach(x =>
-x.classList.remove("active")
-);
-
-$(id).classList.add("active");
-
-window.scrollTo(0,0);
-
-if(id === "s4"){
-loadUserStatus();
-}
-
-}
-
-
-/* ============================================================
-BACK BUTTONS
-============================================================ */
-
-document
-.querySelectorAll("[data-back]")
-.forEach(button => {
-
-button.onclick = () =>
-show(button.dataset.back);
-
-});
-
-
-/* ============================================================
-SAFE TEXT
-============================================================ */
-
-function safe(value){
-
-return String(value ?? "")
-.replace(/[&<>"']/g,c => ({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#039;"
-}[c]));
-
-}
-
-
-/* ============================================================
-TRANSACTION ID
-============================================================ */
-
-function createTransactionId(){
-
-return "ID-" +
-Date.now().toString().slice(-8);
-
-}
-
-
-/* ============================================================
-LOCAL TRANSACTION ID
-============================================================ */
-
-function getSavedId(){
-
-return localStorage.getItem(
-"premium_transaction_id"
-);
-
-}
-
-
-function saveId(id){
-
-localStorage.setItem(
-"premium_transaction_id",
-id
-);
-
-}
-
-
-function showId(){
-
-const id =
-getSavedId();
-
-$("uid").innerHTML =
-id
-?
-"Transaction ID: <b>"
-+ safe(id)
-+ "</b>"
-:
-"";
-
-}
-
-
-/* ============================================================
-RENDER SETTINGS
-============================================================ */
-
-function renderConfig(){
-
-$("title").textContent =
-config.title;
-
-$("desc").textContent =
-config.desc;
-
-$("old").textContent =
-"₹" +
-String(config.oldPrice)
-.replace(/^₹/,"");
-
-$("final").textContent =
-String(config.finalPrice)
-.replace(/^₹/,"");
-
-$("brand").textContent =
-config.merchant ||
-"Premium Access";
-
-showId();
-
-}
-
-
-/* ============================================================
-ADMIN FORM
-============================================================ */
-
-function fillAdmin(){
-
-$("aTitle").value =
-config.title || "";
-
-$("aDesc").value =
-config.desc || "";
-
-$("aOld").value =
-config.oldPrice || "";
-
-$("aFinal").value =
-config.finalPrice || "";
-
-$("aUpi").value =
-config.upi || "";
-
-$("aMerchant").value =
-config.merchant || "";
-
-$("l1n").value =
-config.l1n || "";
-
-$("l1u").value =
-config.l1u || "";
-
-$("l2n").value =
-config.l2n || "";
-
-$("l2u").value =
-config.l2u || "";
-
-$("fn").value =
-config.fn || "";
-
-$("ff").value =
-config.ff || "";
-
-$("fc").value =
-config.fc || "";
-
-}
-
-
-/* ============================================================
-FIREBASE START
-============================================================ */
-
-async function start(){
-
-try{
+/* =========================
+   FIREBASE
+========================= */
 
 const app =
 initializeApp(firebaseConfig);
 
-auth =
+const auth =
 getAuth(app);
 
-db =
+const db =
 getFirestore(app);
 
 
-onAuthStateChanged(
-auth,
-async currentUser => {
+/* =========================
+   VARIABLES
+========================= */
 
-user = currentUser;
+let currentUser = null;
 
-if(!user) return;
+let settings = {
 
-await loadConfig();
+title:"PREMIUM ACCESS",
 
-await loadUserStatus();
+price:899,
 
-});
+upi:"yourupi@upi",
 
+premiumLink1:"",
+
+premiumLink2:""
+
+};
+
+let paymentData = null;
+
+
+/* =========================
+   AUTH
+========================= */
+
+async function startAuth(){
+
+try{
 
 await signInAnonymously(auth);
-
 
 }catch(error){
 
 console.error(error);
 
-alert(
-"Firebase connection error: "
-+ error.message
+document.getElementById(
+"systemMessage"
+).innerHTML =
+
+'<span class="danger">' +
+'Firebase Authentication Error<br>' +
+error.message +
+'</span>';
+
+}
+
+}
+
+
+onAuthStateChanged(
+auth,
+async(user)=>{
+
+if(!user){
+return;
+}
+
+currentUser = user;
+
+await loadSettings();
+
+listenToPayment();
+
+document.getElementById(
+"systemMessage"
+).innerHTML =
+
+'<span class="success">' +
+'✓ System Ready' +
+'</span>';
+
+}
 );
 
-}
 
-}
+/* =========================
+   SETTINGS
+========================= */
 
-
-/* ============================================================
-LOAD CONFIG
-============================================================ */
-
-async function loadConfig(){
+async function loadSettings(){
 
 try{
 
@@ -898,88 +741,259 @@ doc(db,"settings","public");
 const snap =
 await getDoc(ref);
 
-
 if(snap.exists()){
 
-config = {
-...defaults,
-...snap.data()
-};
+const data = snap.data();
 
-}else{
+settings.title =
+data.title || "PREMIUM ACCESS";
 
-await setDoc(
-ref,
-defaults
-);
+settings.price =
+Number(data.price || 899);
 
-config = {
-...defaults
-};
+settings.upi =
+data.upi || "yourupi@upi";
+
+settings.premiumLink1 =
+data.premiumLink1 || "";
+
+settings.premiumLink2 =
+data.premiumLink2 || "";
 
 }
 
-renderConfig();
-
-fillAdmin();
+updateUI();
 
 }catch(error){
 
 console.error(error);
 
-}
+document.getElementById(
+"systemMessage"
+).innerHTML =
+
+'<span class="danger">' +
+'Settings load error<br>' +
+error.message +
+'</span>';
 
 }
 
+}
 
-/* ============================================================
-PAY NOW
-============================================================ */
 
-$("pay").onclick = () => {
+/* =========================
+   UPDATE UI
+========================= */
 
-if(!user){
+function updateUI(){
 
-alert(
-"Please wait for Firebase connection."
+document.getElementById(
+"homeTitle"
+).textContent =
+settings.title;
+
+document.getElementById(
+"homePrice"
+).textContent =
+"₹" + settings.price;
+
+document.getElementById(
+"paymentAmount"
+).textContent =
+"₹" + settings.price;
+
+document.getElementById(
+"payButtonAmount"
+).textContent =
+"₹" + settings.price;
+
+document.getElementById(
+"upiText"
+).textContent =
+settings.upi;
+
+document.getElementById(
+"adminTitle"
+).value =
+settings.title;
+
+document.getElementById(
+"adminPrice"
+).value =
+settings.price;
+
+document.getElementById(
+"adminUpi"
+).value =
+settings.upi;
+
+}
+
+
+/* =========================
+   PAYMENT LISTENER
+========================= */
+
+function listenToPayment(){
+
+if(!currentUser){
+return;
+}
+
+const ref =
+doc(
+db,
+"payment",
+currentUser.uid
 );
+
+onSnapshot(
+ref,
+(snap)=>{
+
+if(!snap.exists()){
+
+paymentData = null;
+
+updatePremium();
 
 return;
 
 }
 
+paymentData = snap.data();
 
-const id =
-createTransactionId();
+updatePremium();
 
-saveId(id);
+updatePaymentMessage();
 
-showId();
+loadAdminPayment();
 
-
-const amount =
-String(config.finalPrice)
-.replace(/[^\d.]/g,"");
-
-
-if(!amount){
-
-alert(
-"Valid price set karo."
+}
 );
-
-return;
 
 }
 
+
+/* =========================
+   SCREEN
+========================= */
+
+function showScreen(id){
+
+document
+.querySelectorAll(".screen")
+.forEach(
+screen=>{
+screen.classList.remove("active");
+}
+);
+
+document
+.getElementById(id)
+.classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+
+window.goHome = function(){
+
+showScreen("home");
+
+};
+
+
+window.openPayment = function(){
+
+showScreen("payment");
+
+};
+
+
+window.openPremium = function(){
+
+showScreen("premium");
+
+updatePremium();
+
+};
+
+
+/* =========================
+   UPI PAYMENT
+========================= */
+
+window.makePayment = function(){
 
 if(
-!config.upi ||
-!config.upi.includes("@")
+!settings.upi ||
+settings.upi === "yourupi@upi"
 ){
 
 alert(
-"Admin panel mein valid UPI ID set karo."
+"Admin ne UPI ID set nahi ki hai."
+);
+
+return;
+
+}
+
+const url =
+"upi://pay?pa=" +
+encodeURIComponent(settings.upi) +
+"&pn=" +
+encodeURIComponent(settings.title) +
+"&am=" +
+encodeURIComponent(settings.price) +
+"&cu=INR";
+
+window.location.href = url;
+
+};
+
+
+/* =========================
+   SUBMIT PAYMENT
+========================= */
+
+window.submitPayment =
+async function(){
+
+if(!currentUser){
+
+alert(
+"System abhi ready nahi hai."
+);
+
+return;
+
+}
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+const appName =
+document
+.getElementById("app")
+.value;
+
+const transaction =
+document
+.getElementById("transaction")
+.value
+.trim();
+
+
+if(!name){
+
+alert(
+"Apna name enter karo."
 );
 
 return;
@@ -987,84 +1001,21 @@ return;
 }
 
 
-const params =
-new URLSearchParams({
-
-pa:config.upi,
-
-pn:config.merchant,
-
-am:amount,
-
-cu:"INR",
-
-tn:"Premium payment " + id
-
-});
-
-
-window.location.href =
-"upi://pay?" +
-params.toString();
-
-};
-
-
-/* ============================================================
-SUBMIT BUTTON
-============================================================ */
-
-$("submit").onclick = () => {
-
-if(!user){
+if(!appName){
 
 alert(
-"Please wait for connection."
+"Payment app select karo."
 );
 
 return;
 
 }
 
-show("s2");
 
-};
-
-
-/* ============================================================
-PREMIUM BUTTON
-============================================================ */
-
-$("premium").onclick = () => {
-
-if(!user){
+if(!transaction){
 
 alert(
-"Please wait for connection."
-);
-
-return;
-
-}
-
-show("s4");
-
-};
-
-
-/* ============================================================
-PAYMENT SUBMIT
-============================================================ */
-
-$("form").onsubmit = async event => {
-
-event.preventDefault();
-
-
-if(!user){
-
-alert(
-"Firebase connection wait karo."
+"Transaction / UTR ID enter karo."
 );
 
 return;
@@ -1074,212 +1025,390 @@ return;
 
 try{
 
-const id =
-getSavedId() ||
-createTransactionId();
+await setDoc(
 
-saveId(id);
+doc(
+db,
+"payment",
+currentUser.uid
+),
 
+{
 
-const data = {
+uid:currentUser.uid,
 
-uid:user.uid,
+name:name,
 
-transactionId:id,
+app:appName,
 
-name:
-$("name").value.trim(),
+transactionId:transaction,
 
-app:
-$("app").value,
-
-paymentId:
-$("paymentId").value.trim(),
-
-time:
-$("time").value,
-
-amount:
-String(config.finalPrice),
+amount:Number(settings.price),
 
 status:"pending",
 
 approved:false,
 
 submittedAt:
-Date.now()
+serverTimestamp()
 
-};
-
-
-await setDoc(
-
-doc(
-db,
-"payment",
-user.uid
-),
-
-data,
+},
 
 {merge:true}
 
 );
 
 
+document.getElementById(
+"paymentMessage"
+).innerHTML =
+
+'<span class="success">' +
+
+'✓ Payment submitted successfully.' +
+
+'<br>Status: Pending approval' +
+
+'</span>';
+
+
 alert(
-"Payment details submitted.\n\nTransaction ID: "
-+ id
+"Payment details submit ho gayi hain."
 );
-
-
-$("form").reset();
-
-show("s1");
-
-await loadUserStatus();
 
 
 }catch(error){
 
 console.error(error);
 
-alert(
-"Submit failed:\n\n"
-+ error.message
-);
+document.getElementById(
+"paymentMessage"
+).innerHTML =
+
+'<span class="danger">' +
+
+'Payment save nahi hui.<br>' +
+
+error.message +
+
+'</span>';
 
 }
 
 };
 
 
-/* ============================================================
-USER STATUS
-============================================================ */
+/* =========================
+   PAYMENT STATUS
+========================= */
 
-async function loadUserStatus(){
+function updatePaymentMessage(){
 
-if(!user || !db) return;
+if(!paymentData){
+return;
+}
+
+if(paymentData.approved === true){
+
+document.getElementById(
+"paymentMessage"
+).innerHTML =
+
+'<span class="success">' +
+
+'✓ Payment approved.' +
+
+'<br>Premium access unlocked.' +
+
+'</span>';
+
+}else{
+
+document.getElementById(
+"paymentMessage"
+).innerHTML =
+
+'<span class="warning">' +
+
+'Payment submitted.' +
+
+'<br>Status: ' +
+
+(paymentData.status || "pending") +
+
+'</span>';
+
+}
+
+}
 
 
-try{
+/* =========================
+   PREMIUM
+========================= */
 
-const snap =
-await getDoc(
-doc(
-db,
-"payment",
-user.uid
-)
+function updatePremium(){
+
+const locked =
+document.getElementById("locked");
+
+const unlocked =
+document.getElementById("unlocked");
+
+
+if(
+paymentData &&
+paymentData.approved === true
+){
+
+locked.classList.add("hidden");
+
+unlocked.classList.remove("hidden");
+
+}else{
+
+locked.classList.remove("hidden");
+
+unlocked.classList.add("hidden");
+
+}
+
+}
+
+
+/* =========================
+   COPY PREMIUM LINK
+========================= */
+
+window.copyPremiumLink =
+async function(number){
+
+const link =
+number === 1
+? settings.premiumLink1
+: settings.premiumLink2;
+
+
+if(!link){
+
+alert(
+"Premium Link abhi set nahi kiya gaya."
 );
-
-
-if(!snap.exists()){
-
-$("userStatus").innerHTML =
-"";
-
-renderPremium(null);
 
 return;
 
 }
 
 
-const data =
-snap.data();
+try{
 
+await navigator.clipboard.writeText(link);
 
-if(data.approved === true){
+const message =
+document.getElementById(
+"copyMessage"
+);
 
-$("userStatus").innerHTML =
-'<span class="success">✓ Payment approved — Premium access unlocked.</span>';
+message.classList.remove(
+"hidden"
+);
 
-}else{
+message.innerHTML =
+'<span class="success">' +
+'✓ Premium link copied.' +
+'</span>';
 
-$("userStatus").innerHTML =
-'<span class="error">Payment submitted — Waiting for approval.</span>';
+setTimeout(
+function(){
 
-}
+message.classList.add(
+"hidden"
+);
 
-
-renderPremium(data);
-
+},
+2500
+);
 
 }catch(error){
 
-console.error(error);
-
-$("userStatus").innerHTML =
-'<span class="error">Status unavailable.</span>';
-
-}
+alert(
+"Link copy nahi ho paya."
+);
 
 }
-
-
-/* ============================================================
-SAVE SETTINGS
-============================================================ */
-
-$("save").onclick = async () => {
-
-try{
-
-config = {
-
-title:
-$("aTitle").value.trim()
-|| defaults.title,
-
-desc:
-$("aDesc").value.trim()
-|| defaults.desc,
-
-oldPrice:
-$("aOld").value.trim()
-|| defaults.oldPrice,
-
-finalPrice:
-$("aFinal").value.trim()
-|| defaults.finalPrice,
-
-upi:
-$("aUpi").value.trim()
-|| defaults.upi,
-
-merchant:
-$("aMerchant").value.trim()
-|| defaults.merchant,
-
-l1n:
-$("l1n").value.trim()
-|| "Premium Link 1",
-
-l1u:
-$("l1u").value.trim(),
-
-l2n:
-$("l2n").value.trim()
-|| "Premium Link 2",
-
-l2u:
-$("l2u").value.trim(),
-
-fn:
-$("fn").value.trim()
-|| "Download File",
-
-ff:
-$("ff").value.trim()
-|| "config.txt",
-
-fc:
-$("fc").value
 
 };
 
+
+/* =========================
+   DOWNLOAD
+========================= */
+
+window.downloadFile =
+function(){
+
+alert(
+"Download file URL abhi set nahi kiya gaya."
+);
+
+};
+
+
+/* =========================
+   ADMIN
+========================= */
+
+const ADMIN_PIN =
+"852201";
+
+
+window.openAdmin =
+function(){
+
+const pin =
+prompt(
+"Enter Admin PIN"
+);
+
+if(pin === null){
+return;
+}
+
+if(pin !== ADMIN_PIN){
+
+alert(
+"Wrong Admin PIN"
+);
+
+return;
+
+}
+
+showScreen(
+"adminPanel"
+);
+
+loadAdminPayment();
+
+};
+
+
+/* =========================
+   ADMIN PAYMENT
+========================= */
+
+function loadAdminPayment(){
+
+const box =
+document.getElementById(
+"adminPaymentStatus"
+);
+
+if(!paymentData){
+
+box.innerHTML =
+"No payment submitted from this browser.";
+
+return;
+
+}
+
+box.innerHTML =
+
+"Name: " +
+(paymentData.name || "-") +
+
+"<br>Payment App: " +
+(paymentData.app || "-") +
+
+"<br>Transaction ID: " +
+(paymentData.transactionId || "-") +
+
+"<br>Amount: ₹" +
+(paymentData.amount || "-") +
+
+"<br>Status: " +
+(paymentData.status || "-") +
+
+"<br>Approved: " +
+(
+paymentData.approved
+? "YES"
+: "NO"
+);
+
+}
+
+
+/* =========================
+   ADMIN SETTINGS
+========================= */
+
+window.saveAdminSettings =
+async function(){
+
+if(!currentUser){
+
+alert(
+"Firebase ready nahi hai."
+);
+
+return;
+
+}
+
+const title =
+document
+.getElementById("adminTitle")
+.value
+.trim();
+
+const price =
+Number(
+document
+.getElementById("adminPrice")
+.value
+);
+
+const upi =
+document
+.getElementById("adminUpi")
+.value
+.trim();
+
+
+if(!title){
+
+alert(
+"Title enter karo."
+);
+
+return;
+
+}
+
+if(!price || price <= 0){
+
+alert(
+"Valid price enter karo."
+);
+
+return;
+
+}
+
+if(!upi){
+
+alert(
+"UPI ID enter karo."
+);
+
+return;
+
+}
+
+
+try{
 
 await setDoc(
 
@@ -1289,248 +1418,81 @@ db,
 "public"
 ),
 
-config
+{
+
+title:title,
+
+price:price,
+
+upi:upi,
+
+premiumLink1:
+settings.premiumLink1,
+
+premiumLink2:
+settings.premiumLink2,
+
+updatedAt:
+serverTimestamp()
+
+},
+
+{merge:true}
 
 );
 
 
-renderConfig();
+settings.title =
+title;
 
-alert(
-"Changes saved successfully."
-);
+settings.price =
+price;
+
+settings.upi =
+upi;
+
+updateUI();
+
+
+document.getElementById(
+"adminMessage"
+).innerHTML =
+
+'<span class="success">' +
+
+'✓ Settings saved successfully.' +
+
+'</span>';
 
 
 }catch(error){
 
 console.error(error);
 
-alert(
-"Save failed:\n\n"
-+ error.message
-);
+document.getElementById(
+"adminMessage"
+).innerHTML =
+
+'<span class="danger">' +
+
+'Save error:<br>' +
+
+error.message +
+
+'</span>';
 
 }
 
 };
 
 
-/* ============================================================
-ADMIN
-============================================================ */
+/* =========================
+   START
+========================= */
 
-$("adminBtn").onclick = () => {
+startAuth();
 
-const pin =
-prompt("Enter Admin PIN:");
+</script>
 
-
-if(pin === ADMIN_PIN){
-
-show("s3");
-
-loadAdminRequests();
-
-}else if(pin !== null){
-
-alert(
-"Incorrect PIN."
-);
-
-}
-
-};
-
-
-/* ============================================================
-ADMIN REQUESTS
-============================================================
-
-IMPORTANT:
-
-With your current secure Firestore rules, the browser admin
-cannot safely query every user's payment document.
-
-Therefore this prototype does NOT perform an insecure
-"read every payment" query.
-
-For production, approval should be moved to a trusted
-server/Admin SDK or Cloud Function.
-============================================================ */
-
-async function loadAdminRequests(){
-
-$("requests").innerHTML = `
-
-<div class="notice">
-
-<b>Admin approval setup</b>
-
-<br><br>
-
-Payment requests are stored securely under each user's UID.
-
-<br><br>
-
-For a production version, the approval panel needs a
-trusted backend/Admin SDK instead of exposing all payment
-records to the browser.
-
-</div>
-
-`;
-
-}
-
-
-/* ============================================================
-PREMIUM
-============================================================ */
-
-function renderPremium(data){
-
-const state =
-$("premiumState");
-
-const content =
-$("premiumContent");
-
-
-if(!data || data.approved !== true){
-
-state.innerHTML = `
-
-<div class="notice locked">
-
-<b>Access Denied</b>
-
-<br>
-
-Admin approval is required.
-
-</div>
-
-`;
-
-content.innerHTML = "";
-
-return;
-
-}
-
-
-state.innerHTML = `
-
-<div class="notice unlocked">
-
-<b>Access Granted</b>
-
-<br>
-
-Your premium access is unlocked.
-
-</div>
-
-`;
-
-
-content.innerHTML = `
-
-<div class="box">
-
-<h2>${safe(config.l1n)}</h2>
-
-<p>
-Open premium resource.
-</p>
-
-<button
-class="btn primary"
-id="x1">
-Open Link 1
-</button>
-
-</div>
-
-
-<div class="box">
-
-<h2>${safe(config.l2n)}</h2>
-
-<p>
-Open premium resource.
-</p>
-
-<button
-class="btn primary"
-id="x2">
-Open Link 2
-</button>
-
-</div>
-
-
-<div class="box">
-
-<h2>${safe(config.fn)}</h2>
-
-<p>
-Download the configured file.
-</p>
-
-<button
-class="btn primary"
-id="dl">
-Download File
-</button>
-
-</div>
-
-`;
-
-
-$("x1").onclick =
-() => openExternal(config.l1u);
-
-$("x2").onclick =
-() => openExternal(config.l2u);
-
-$("dl").onclick =
-downloadFile;
-
-}
-
-
-/* ============================================================
-OPEN LINK
-============================================================ */
-
-function openExternal(url){
-
-if(
-!/^https?:\/\//i.test(url)
-){
-
-alert(
-"Valid http/https URL set karo."
-);
-
-return;
-
-}
-
-
-window.open(
-url,
-"_blank",
-"noopener,noreferrer"
-);
-
-}
-
-
-/* ============================================================
-DOWNLOAD
-============================================================ */
-
-function 
+</body>
+  </html>
